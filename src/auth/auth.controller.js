@@ -9,13 +9,19 @@ export const login = async(req, res) => {
         
         const user = await Usuario.findOne({
             $or: [
-                {email}, {username}
+                {username}
             ]
         })
 
+        if(req.body.email){
+            return res.status(400).json({
+                msg: 'Solo puede inciar sesion mediante username'
+            })
+        }
+
         if (!user) {
             return res.status(400).json({
-                msg: 'Credenciales incorrectas, Correo no existe en la base de datos'
+                msg: 'Credenciales incorrectas, usuario no existe en la base de datos'
             });
         }
 
@@ -56,8 +62,6 @@ export const register = async(req, res) => {
     try {
         const data = req.body;
 
-        let profilePicture = req.file ? req.file.filename : null;
-
         const encryptedPassword = await hash(data.password);
 
         const user = await Usuario.create({
@@ -67,7 +71,7 @@ export const register = async(req, res) => {
             email: data.email,
             phone: data.phone,
             password: encryptedPassword,
-            role: data.role,
+            role: data.role
         })
 
         return res.status(201).json({

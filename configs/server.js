@@ -6,7 +6,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
-import authRoutes from '../src/auth/auth.routes.js'
+import authRoutes from '../src/auth/auth.routes.js';
+import userRoutes from '../src/users/user.routes.js';
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false}));
@@ -17,7 +18,8 @@ const middlewares = (app) => {
     app.use(limiter);
 }
 const routes = (app) => {
-    app.use('/ventaOnline/v1/auth', authRoutes)
+    app.use('/ventaOnline/v1/auth', authRoutes),
+    app.use('/ventaOnline/v1/users', userRoutes)
 }
 
 const conectarDB = async() => {
