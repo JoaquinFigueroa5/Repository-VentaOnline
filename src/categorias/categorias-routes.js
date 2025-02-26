@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { saveCategorias, getCategorias } from './categorias-controller.js';
+import { saveCategorias, getCategorias, deleteCategoria } from './categorias-controller.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -15,5 +15,14 @@ router.post(
 )
 
 router.get('/', getCategorias)
+
+router.delete(
+    '/:id',
+    [
+        validarJWT,
+        validarCampos,
+    ],
+    deleteCategoria
+)
 
 export default router;

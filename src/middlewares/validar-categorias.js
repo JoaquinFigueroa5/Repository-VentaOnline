@@ -19,3 +19,15 @@ export const defaultCategoria = async() => {
         console.log("Error al crear la categoria")
     }
 }
+
+export const notDeleteDCategoria = async() => {
+    try {
+        
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al NO eliminar la categoria",
+            error: error.message || error
+        })
+    }
+}
