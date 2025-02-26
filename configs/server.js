@@ -8,6 +8,8 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
+import categoriaRoutes from '../src/categorias/categorias-routes.js';
+import { defaultCategoria } from '../src/middlewares/validar-categorias.js'
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false}));
@@ -19,7 +21,8 @@ const middlewares = (app) => {
 }
 const routes = (app) => {
     app.use('/ventaOnline/v1/auth', authRoutes),
-    app.use('/ventaOnline/v1/users', userRoutes)
+    app.use('/ventaOnline/v1/users', userRoutes),
+    app.use('/ventaOnline/v1/categorias', categoriaRoutes)
 }
 
 const conectarDB = async() => {
@@ -40,6 +43,7 @@ export const initServer = async() => {
         middlewares(app);
         conectarDB();
         routes(app);
+        defaultCategoria();
     } catch (err) {
         console.log(`Server init failed: ${err}`)
     }

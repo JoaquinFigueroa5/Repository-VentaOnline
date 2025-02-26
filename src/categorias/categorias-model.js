@@ -10,6 +10,10 @@ const CategoriaSchema = Schema({
     descripcion: {
         type: String,
         maxLenght: [200, 'No puede sobrepasar los 200 caracteres']
+    },
+    state: {
+        type: Boolean,
+        default: true
     }
 })
 
