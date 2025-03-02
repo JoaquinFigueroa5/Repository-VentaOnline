@@ -4,25 +4,40 @@ const ProductoSchema = Schema({
     name: {
         type: String,
         required: [true, "El nombre del producto es obligatorio"],
-        maxLenght: [25, 'No puede sobrepasar los 25 caracteres']
+        maxlength: [25, 'No puede sobrepasar los 25 caracteres']
     },
     descripcion: {
         type: String,
         required: true,
-        minLenght: [4, "Tiene que ser mayor a 4 caracteres"]
+        minlength: [4, "Tiene que ser mayor a 4 caracteres"]
     },
     precio: {
-        type: Double,
+        type: Schema.Types.Decimal128,
         required: true,
-        min: [0, "El precio no puede ser negativo"]
+        validate: {
+            validator: (v) => v >= 0,
+            message: "El precio no puede ser negativo"
+        }
     },
     categoria: {
         type: Schema.Types.ObjectId,
         ref: 'Categoria',
         required: true
+    },
+    ventas: {
+        type: Number,
+        default: 0
+    },
+    stock: {
+        type: Number,
+        required: true
+    },
+    state: {
+        type: Boolean,
+        default: true
     }
 }, {
-    timeStamps: true,
+    timestamps: true,
     versionKey: false
 });
 

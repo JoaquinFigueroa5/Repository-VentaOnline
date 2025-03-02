@@ -9,15 +9,9 @@ export const login = async(req, res) => {
         
         const user = await Usuario.findOne({
             $or: [
-                {username}
+                {username}, {email}
             ]
         })
-
-        if(req.body.email){
-            return res.status(400).json({
-                msg: 'Solo puede inciar sesion mediante username'
-            })
-        }
 
         if (!user) {
             return res.status(400).json({
@@ -44,8 +38,7 @@ export const login = async(req, res) => {
             msg: 'Inicio de sesion exitoso!',
             userDetails: {
                 username: user.username,
-                token: token,
-                profilePicture: user.profilePicture
+                token: token
             }
         })
 

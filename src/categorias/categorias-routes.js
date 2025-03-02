@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { saveCategorias, getCategorias, deleteCategoria } from './categorias-controller.js';
+import { onlyAdminCategoria } from '../middlewares/validar-categorias.js'
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -9,6 +10,7 @@ router.post(
     '/submit',
     [
         validarJWT,
+        onlyAdminCategoria,
         validarCampos
     ],
     saveCategorias

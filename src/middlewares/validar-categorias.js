@@ -1,4 +1,5 @@
 import Categoria from "../categorias/categorias-model.js";
+import User from "../users/user.model.js";
 
 export const defaultCategoria = async() => {
     try {
@@ -13,7 +14,7 @@ export const defaultCategoria = async() => {
             await categoria.save();
             console.log("Categoria creada con exito");
         }else{
-            console.log("Categoria hogar ya existente");
+            console.log("Categoria HOGAR ya existente");
         }
     } catch (error) {
         console.log("Error al crear la categoria")
@@ -27,6 +28,27 @@ export const notDeleteDCategoria = async() => {
         return res.status(500).json({
             success: false,
             msg: "Error al NO eliminar la categoria",
+            error: error.message || error
+        })
+    }
+}
+
+export const onlyAdminCategoria = async(req, res, next) => {
+    const authenticatedUser = req.user.role;
+    try {
+        if(authenticatedUser !== "ADMIN_ROLE"){
+            return res.status(403).json({
+                success: false,
+                msg: "No tiene permiso para agregar una categoria."
+            })
+        }
+
+        next();
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al validar categoria",
             error: error.message || error
         })
     }

@@ -25,3 +25,23 @@ export const getUsers = async(req = request, res = response) => {
         })
     }
 }
+
+export const deleteUser = async(req, res) => {
+    const { id } = req.params;
+    try {
+    
+        const user = await User.findByIdAndDelete(id);
+
+        res.status(200).json({
+            success: true,
+            msg: "Usuario eliminado con exito",
+            user
+        })
+        
+    } catch (error) {
+        return res.status(500).json({
+            success: true,
+            msg: "Error al eliminar el usuario"
+        })
+    }
+}
