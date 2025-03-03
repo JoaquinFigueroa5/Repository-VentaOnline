@@ -39,7 +39,7 @@ export const onlyAdminCategoria = async(req, res, next) => {
         if(authenticatedUser !== "ADMIN_ROLE"){
             return res.status(403).json({
                 success: false,
-                msg: "No tiene permiso para agregar una categoria."
+                msg: "No tiene permiso para modificar una categoria."
             })
         }
 

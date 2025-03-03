@@ -3,12 +3,11 @@ import User from "../users/user.model.js";
 export const deleteDeleProducto = async(req, res, next) => {
     const { id } = req.params;
     const authenticatedUser = req.user.role;
-
     try {
-        if(authenticatedUser === "CLIENT_ROLE"){
+        if(authenticatedUser !== "ADMIN_ROLE"){
             return res.status(403).json({
                 success: false,
-                msg: "Un usuario no puede eliminar productos"
+                msg: "Un cliente no puede manipular productos"
             })
         }
 

@@ -11,7 +11,7 @@ router.post(
     '/submit',
     [
         validarJWT,
-        onlyAdminCategoria,
+        deleteDeleProducto,
         validarCampos
     ],
     saveProducto

@@ -45,3 +45,26 @@ export const deleteUser = async(req, res) => {
         })
     }
 }
+
+export const updateUser = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const { _id, ...data} = req.body;
+        const updateUser = await User.findByIdAndUpdate(id, data, {new: true});
+
+        res.status(200).json({
+            success: true,
+            msg: "Usuario actualizado con exito",
+            user: updateUser
+        })
+        
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al actualizar",
+            error: error.message || error
+        })
+    }
+}
+
+/* Realizar editar de usuarios, carritos de compras, ect */
