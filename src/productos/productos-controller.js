@@ -1,12 +1,12 @@
 import Producto from "./pruductos-model.js";
 import Categoria from "../categorias/categorias-model.js";
+import Compras from "../compras/compras-model.js";
 
 export const saveProducto = async(req, res) => {
     try {
         const data = req.body;
 
         const categorias = await Categoria.findOne({ nombre: data.categoria })
-        
 
         const producto = new Producto({
             name: data.name,

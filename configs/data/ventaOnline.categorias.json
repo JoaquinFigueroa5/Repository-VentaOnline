@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "67c34f406b5894eba70bc588"
+  },
+  "nombre": "Hogar",
+  "descripcion": "Todo lo que tiene que ver con la casa/hogar",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c350356b5894eba70bc590"
+  },
+  "nombre": "Tecnologia",
+  "descripcion": "Todos los productos referentes a la tecnologia",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c383edf282bd491700d28c"
+  },
+  "nombre": "Moda",
+  "descripcion": "Todo lo que tiene que ver con prendas de vestir.",
+  "state": true,
+  "__v": 0
+}]

@@ -10,7 +10,85 @@
 			"name": "getUsers",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUsers",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzYmU4ZmE0OWJjMTc2ZDk2OGQzM2IiLCJpYXQiOjE3NDA4ODE3NjUsImV4cCI6MTc0MDg5MjU2NX0.M-67NWj5YDb67p3Ec3ucKjY0z07F5ZpbrSAzxzH4hqk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/users/67c3be8fa49bc176d968d33b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"users",
+						"67c3be8fa49bc176d968d33b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUsers",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzYmU4ZmE0OWJjMTc2ZDk2OGQzM2IiLCJpYXQiOjE3NDA5NTI1MzgsImV4cCI6MTc0MDk2MzMzOH0.5PiHpEHUGJ6mYLw8Ne4eA2ji3hz9Jp0eDtm74AL83q0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"11223344\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/users/67c3be8fa49bc176d968d33b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"users",
+						"67c3be8fa49bc176d968d33b"
+					]
+				}
 			},
 			"response": []
 		}

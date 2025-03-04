@@ -1,9 +1,11 @@
 import {hash, verify} from 'argon2';
 import Usuario from '../users/user.model.js';
+import Compras from '../compras/compras-model.js';
 import { generarJWT } from '../helpers/generate-JWT.js';
 
 export const login = async(req, res) => {
     const { email, password, username } = req.body;
+    const total = await Compras.countDocuments();
 
     try {
         
@@ -34,11 +36,17 @@ export const login = async(req, res) => {
 
         const token = await generarJWT(user.id);
 
+        const compra = await Compras.find({titular: user.id})
+        .populate('titular', 'user username -_id')
+        .populate('productos', 'producto name precio -_id');       
+
         res.status(200).json({
             msg: 'Inicio de sesion exitoso!',
             userDetails: {
                 username: user.username,
-                token: token
+                token: token,
+                total,
+                compras: compra
             }
         })
 

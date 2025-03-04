@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "67c6f03fdbfc8af3a710be48"
+  },
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "$oid": "67c3c324675a7edc846fa7a3"
+    },
+    {
+      "$oid": "67c3ed1451031af26af4d300"
+    }
+  ],
+  "total": 2449.98,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-04T12:21:19.389Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T12:21:19.389Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c6f049dbfc8af3a710be57"
+  },
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "$oid": "67c3c324675a7edc846fa7a3"
+    },
+    {
+      "$oid": "67c3ed1451031af26af4d300"
+    }
+  ],
+  "total": 2449.98,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-04T12:21:29.589Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T12:21:29.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c6f0e3aa261a0e7832538c"
+  },
+  "titular": {
+    "$oid": "67c3be8fa49bc176d968d33b"
+  },
+  "productos": [
+    {
+      "$oid": "67c3c324675a7edc846fa7a3"
+    },
+    {
+      "$oid": "67c3c353675a7edc846fa7a9"
+    }
+  ],
+  "total": 1599.98,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-04T12:24:03.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T12:24:03.977Z"
+  },
+  "__v": 0
+}]

@@ -30,7 +30,8 @@ const ProductoSchema = Schema({
     },
     stock: {
         type: Number,
-        required: true
+        required: true,
+        min: [0, "No hay productos en Stock"]
     },
     state: {
         type: Boolean,

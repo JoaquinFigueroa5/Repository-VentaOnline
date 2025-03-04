@@ -36,6 +36,10 @@ const UserSchema = Schema({
         enum: ['ADMIN_ROLE', 'CLIENT_ROLE'],
         default: 'CLIENT_ROLE'
     },
+    compras: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Compras'
+    }],
     state: {
         type: Boolean,
         default: true

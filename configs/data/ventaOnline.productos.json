@@ -1,0 +1,88 @@
+[{
+  "_id": {
+    "$oid": "67c3c324675a7edc846fa7a3"
+  },
+  "name": "Cama",
+  "descripcion": "Lugar para poder descansar y dormir.",
+  "precio": {
+    "$numberDecimal": "1349.99"
+  },
+  "categoria": {
+    "$oid": "67c34f406b5894eba70bc588"
+  },
+  "ventas": 23,
+  "stock": 1,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-02T02:32:04.350Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T13:39:02.243Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c3c353675a7edc846fa7a9"
+  },
+  "name": "Audifonos",
+  "descripcion": "Dispositivo para esuchar audios de forma privada.",
+  "precio": {
+    "$numberDecimal": "249.99"
+  },
+  "categoria": {
+    "$oid": "67c350356b5894eba70bc590"
+  },
+  "ventas": 23,
+  "stock": 0,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-02T02:32:51.798Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T13:39:02.248Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c3c375675a7edc846fa7af"
+  },
+  "name": "Manguera",
+  "descripcion": "Usado para regar agua donde se desee.",
+  "precio": {
+    "$numberDecimal": "49.99"
+  },
+  "categoria": {
+    "$oid": "67c383edf282bd491700d28c"
+  },
+  "ventas": 1,
+  "stock": 33,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-02T02:33:25.614Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-02T02:33:25.614Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c3ed1451031af26af4d300"
+  },
+  "name": "Monitor",
+  "descripcion": "Pantalla para usar en la PC.",
+  "precio": {
+    "$numberDecimal": "1099.99"
+  },
+  "categoria": {
+    "$oid": "67c34f406b5894eba70bc588"
+  },
+  "ventas": 2,
+  "stock": 12,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-02T05:31:00.668Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T12:21:29.582Z"
+  }
+}]

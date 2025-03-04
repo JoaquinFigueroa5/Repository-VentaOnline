@@ -2,7 +2,7 @@ import Compras from "./compras-model.js";
 import Producto from "../productos/pruductos-model.js";
 
 export const saveCompras = async(req, res) => {
-    
+    const { id } = req.params;
     try {
         const titular = req.user._id;
         const { productos } = req.body;
@@ -16,6 +16,15 @@ export const saveCompras = async(req, res) => {
             })
         }
 
+        for (const prod of producto) {
+            await Producto.findByIdAndUpdate(prod._id, { $inc: { ventas: 1 } });
+        }
+
+        for (const stock of producto) {
+            await Producto.findByIdAndUpdate(stock._id, { $inc: { stock: -1}})
+        }
+        
+
         const compra = new Compras({
             titular: titular,
             productos: producto.map(prod => prod._id),
@@ -24,9 +33,9 @@ export const saveCompras = async(req, res) => {
 
         await compra.save();
 
-        const compraDetalles = await Compras.find()
+        const compraDetalles = await Compras.findOne({ titular: titular})
         .populate('titular', 'user username -_id')
-        .populate('productos', 'producto name -_id');
+        .populate('productos', 'producto name precio -_id');
 
         res.status(200).json({
             success: true,
