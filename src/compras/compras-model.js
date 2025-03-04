@@ -3,16 +3,16 @@ import {Schema, model} from 'mongoose';
 const ComprasSchema = Schema({
     titular: {
         type: Schema.Types.ObjectId,
-        ref: "user",
+        ref: "User",
         required: true
     },
     productos: [{
         type: Schema.Types.ObjectId,
-        ref: "producto",
+        ref: "Producto",
         required: true,
     }],
     total: {
-        type: Schema.Types.Decimal128,
+        type: Number,
         required: true,
         validate: {
             validator: (v) => v >= 0,

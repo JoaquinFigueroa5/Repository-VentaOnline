@@ -12,7 +12,7 @@ const ProductoSchema = Schema({
         minlength: [4, "Tiene que ser mayor a 4 caracteres"]
     },
     precio: {
-        type: Schema.Types.Decimal128,
+        type: Number,
         required: true,
         validate: {
             validator: (v) => v >= 0,

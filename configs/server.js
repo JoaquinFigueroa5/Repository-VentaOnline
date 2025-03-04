@@ -9,7 +9,8 @@ import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
 import categoriaRoutes from '../src/categorias/categorias-routes.js';
-import productoRoutes from '../src/productos/productos-routes.js'
+import productoRoutes from '../src/productos/productos-routes.js';
+import comprasRouter from '../src/compras/compras-routes.js';
 import { defaultCategoria } from '../src/middlewares/validar-categorias.js'
 
 const middlewares = (app) => {
@@ -24,7 +25,8 @@ const routes = (app) => {
     app.use('/ventaOnline/v1/auth', authRoutes),
     app.use('/ventaOnline/v1/users', userRoutes),
     app.use('/ventaOnline/v1/categorias', categoriaRoutes),
-    app.use('/ventaOnline/v1/productos', productoRoutes)
+    app.use('/ventaOnline/v1/productos', productoRoutes),
+    app.use('/ventaOnline/v1/compras', comprasRouter)
 }
 
 const conectarDB = async() => {
