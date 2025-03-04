@@ -44,7 +44,7 @@ export const getProductos = async(req, res) => {
                 .populate("categoria", "nombre -_id")
                 .sort(
                     ordenar === "agotados" ? { stock: 1 } :
-                    ordenar === "MasVendidos" ? { ventas: 1} :
+                    ordenar === "MasVendidos" ? { ventas: -1} :
                     undefined)
         ])
 

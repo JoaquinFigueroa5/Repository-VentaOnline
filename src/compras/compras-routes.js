@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { saveCompras } from './compras-controller.js';
+import { saveCompras, getCompras } from './compras-controller.js';
 import { limitStock } from '../middlewares/validar-productos.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from '../middlewares/validar-jwt.js';
@@ -15,6 +15,8 @@ router.post(
     ],
     saveCompras
 )
+
+router.get('/', getCompras)
 
 export default router;
 // router.get('/', )

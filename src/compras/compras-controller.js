@@ -1,5 +1,6 @@
 import Compras from "./compras-model.js";
 import Producto from "../productos/pruductos-model.js";
+import User from "../users/user.model.js";
 
 export const saveCompras = async(req, res) => {
     const { id } = req.params;
@@ -47,6 +48,28 @@ export const saveCompras = async(req, res) => {
         return res.status(500).json({
             success: false,
             msg: "Error al agregar carrito de compras",
+            error: error.message || error
+        })
+    }
+}
+
+export const getCompras = async(req, res) => {
+    try {
+        const authenticatedUser = req.user.id;
+        const compras = await Usuario.find(authenticatedUser);
+
+        console.log(compras);
+
+        res.status(200).json({
+            success: true,
+            msg: "Facturas obtenidas correctamente!",
+            compras
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al generar la factura",
             error: error.message || error
         })
     }
