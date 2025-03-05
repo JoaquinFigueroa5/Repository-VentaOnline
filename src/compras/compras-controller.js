@@ -3,7 +3,6 @@ import Producto from "../productos/pruductos-model.js";
 import User from "../users/user.model.js";
 
 export const saveCompras = async(req, res) => {
-    const { id } = req.params;
     try {
         const titular = req.user._id;
         const { productos } = req.body;
@@ -53,12 +52,12 @@ export const saveCompras = async(req, res) => {
     }
 }
 
-export const getCompras = async(req, res) => {
+export const getComprasUser = async(req, res) => {
     try {
         const authenticatedUser = req.user.id;
-        const compras = await Usuario.find(authenticatedUser);
-
-        console.log(compras);
+        const compras = await Compras.find({ titular: authenticatedUser })
+            .populate('productos', 'name precio -_id')
+            .populate('titular', 'user username -_id');
 
         res.status(200).json({
             success: true,
@@ -70,6 +69,92 @@ export const getCompras = async(req, res) => {
         return res.status(500).json({
             success: false,
             msg: "Error al generar la factura",
+            error: error.message || error
+        })
+    }
+}
+
+export const getComprasAdmin = async(req, res) => {
+    const query = { state: true }
+    try {
+        const [total, compras] = await Promise.all([
+            Compras.countDocuments(query),
+            Compras.find(query)
+                .populate('productos', 'name precio -_id')
+                .populate('titular', 'user username -_id')
+        ]);
+
+        res.status(200).json({
+            success: true,
+            msg: "Facturas obtenidas con exito",
+            total,
+            compras
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener las facturas"
+        })
+    }
+}
+
+export const updateCompras = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const { _id, productos, ...data } = req.body;
+
+        const compraExistente = await Compras.findById(id);
+        if (!compraExistente) {
+            return res.status(404).json({
+                success: false,
+                msg: "Compra no encontrada"
+            });
+        }
+
+        // 2️⃣ Verificar si hay productos nuevos para actualizar
+        let productosIds = [];
+        let nuevoTotal = 0;
+        if (productos && Array.isArray(productos) && productos.length > 0) {
+            const productosEncontrados = await Producto.find(
+                { name: { $in: productos } }, 
+                "_id precio"
+            );
+
+            console.log("Productos encontrados en la BD:", productosEncontrados);
+
+            if (productosEncontrados.length === 0) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "Los productos enviados no existen en la base de datos"
+                });
+            }
+
+            productosIds = productosIds.map(prod => prod._id);
+            nuevoTotal = productosEncontrados.reduce((sum, prod) => sum + prod.precio, 0);
+        }
+
+        const updateCompra = await Compras.findByIdAndUpdate(
+            id,
+            { 
+                ...data, ...(productosIds.length > 0 && { productos: productosIds }),
+                total: nuevoTotal
+            },
+            { new: true }
+        )
+        .populate('productos', 'name precio -_id')
+        .populate('titular', 'user username -_id');
+
+        res.status(200).json({
+            success: true,
+            msg: "Factura actualizada con exito",
+            compra: updateCompra
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al actualizar la factura",
             error: error.message || error
         })
     }

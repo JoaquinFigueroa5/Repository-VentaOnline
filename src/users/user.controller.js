@@ -66,5 +66,3 @@ export const updateUser = async(req, res) => {
         })
     }
 }
-
-/* Realizar editar de usuarios, carritos de compras, ect */

@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { saveCompras, getCompras } from './compras-controller.js';
+import { saveCompras, getComprasUser, getComprasAdmin, updateCompras } from './compras-controller.js';
 import { limitStock } from '../middlewares/validar-productos.js';
+import { onlyAdminFactura } from '../middlewares/validar-facturas.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from '../middlewares/validar-jwt.js';
 
@@ -16,7 +17,26 @@ router.post(
     saveCompras
 )
 
-router.get('/', getCompras)
+router.get('/', validarJWT, getComprasUser)
+
+router.get(
+    '/admin',
+    [
+        validarJWT,
+        onlyAdminFactura,
+        validarCampos
+    ],
+    getComprasAdmin
+)
+
+router.put(
+    '/:id',
+    [
+        validarJWT,
+        onlyAdminFactura,
+        validarCampos
+    ],
+    updateCompras
+)
 
 export default router;
-// router.get('/', )
