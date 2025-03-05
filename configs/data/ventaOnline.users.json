@@ -54,4 +54,24 @@
   "updatedAt": {
     "$date": "2025-03-02T21:55:48.784Z"
   }
+},
+{
+  "_id": {
+    "$oid": "67c8649c39ed888ed4493ab8"
+  },
+  "name": "Saul",
+  "surname": "De Leon",
+  "username": "gokusaul",
+  "email": "sdeleon@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$IbCZT463ynE3p/Cvqe0+dQ$tfBwX/WLqnGuPz3KpMgkyZ/d+Y4Aqp3Aj4Lx8Y0c+fs",
+  "phone": "58771857",
+  "role": "CLIENT_ROLE",
+  "compras": [],
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-05T14:50:04.995Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T14:50:04.995Z"
+  }
 }]

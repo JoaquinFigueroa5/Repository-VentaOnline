@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Alejandro\",\r\n  \"surname\": \"Quinonez\",\r\n  \"username\": \"cuco\",\r\n  \"email\": \"aquinonez@gmail.com\",\r\n  \"password\": \"Alejandro2007\",\r\n  \"phone\": \"58771857\"\r\n}",
+					"raw": "{\r\n  \"name\": \"Saul\",\r\n  \"surname\": \"De Leon\",\r\n  \"username\": \"gokusaul\",\r\n  \"email\": \"sdeleon@gmail.com\",\r\n  \"password\": \"Saul2007\",\r\n  \"phone\": \"58771857\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"cucoide\",\r\n    \"password\": \"Alejandro2007\"\r\n}",
+					"raw": "{\r\n    \"username\": \"gokusaul\",\r\n    \"password\": \"Saul2007\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

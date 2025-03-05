@@ -1,75 +1,288 @@
 [{
   "_id": {
-    "$oid": "67c6f03fdbfc8af3a710be48"
+    "$oid": "67c859222b05d75dd8eb1284"
   },
   "titular": {
     "$oid": "67c3825d42872f36b71534ee"
   },
   "productos": [
     {
-      "$oid": "67c3c324675a7edc846fa7a3"
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c859222b05d75dd8eb1285"
+      }
     },
     {
-      "$oid": "67c3ed1451031af26af4d300"
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c859222b05d75dd8eb1286"
+      }
     }
   ],
-  "total": 2449.98,
+  "total": 649.95,
   "state": true,
   "createdAt": {
-    "$date": "2025-03-04T12:21:19.389Z"
+    "$date": "2025-03-05T14:01:06.506Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T12:21:19.389Z"
-  },
-  "__v": 0
+    "$date": "2025-03-05T14:01:06.506Z"
+  }
 },
 {
   "_id": {
-    "$oid": "67c6f049dbfc8af3a710be57"
+    "$oid": "67c859392b05d75dd8eb1295"
   },
   "titular": {
     "$oid": "67c3825d42872f36b71534ee"
   },
   "productos": [
     {
-      "$oid": "67c3c324675a7edc846fa7a3"
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c859392b05d75dd8eb1296"
+      }
     },
     {
-      "$oid": "67c3ed1451031af26af4d300"
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c859392b05d75dd8eb1297"
+      }
     }
   ],
-  "total": 2449.98,
+  "total": 649.95,
   "state": true,
   "createdAt": {
-    "$date": "2025-03-04T12:21:29.589Z"
+    "$date": "2025-03-05T14:01:29.834Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T12:21:29.589Z"
-  },
-  "__v": 0
+    "$date": "2025-03-05T14:01:29.834Z"
+  }
 },
 {
   "_id": {
-    "$oid": "67c6f0e3aa261a0e7832538c"
+    "$oid": "67c859452b05d75dd8eb12a8"
   },
   "titular": {
-    "$oid": "67c3be8fa49bc176d968d33b"
+    "$oid": "67c3825d42872f36b71534ee"
   },
   "productos": [
     {
-      "$oid": "67c3c324675a7edc846fa7a3"
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c859452b05d75dd8eb12a9"
+      }
     },
     {
-      "$oid": "67c3c353675a7edc846fa7a9"
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c859452b05d75dd8eb12aa"
+      }
     }
   ],
-  "total": 1599.98,
+  "total": 649.95,
   "state": true,
   "createdAt": {
-    "$date": "2025-03-04T12:24:03.977Z"
+    "$date": "2025-03-05T14:01:41.213Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T12:24:03.977Z"
+    "$date": "2025-03-05T14:01:41.213Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c85b34997034d961d45f53"
   },
-  "__v": 0
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c85b34997034d961d45f54"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c85b34997034d961d45f55"
+      }
+    }
+  ],
+  "total": 649.95,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-05T14:09:56.907Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T14:09:56.907Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c85b5fccc1142ed32ffa0c"
+  },
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c85b5fccc1142ed32ffa0d"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c85b5fccc1142ed32ffa0e"
+      }
+    }
+  ],
+  "total": 649.95,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-05T14:10:39.790Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T14:10:39.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c85b6bccc1142ed32ffa25"
+  },
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c85b6bccc1142ed32ffa26"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c85b6bccc1142ed32ffa27"
+      }
+    }
+  ],
+  "total": 649.95,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-05T14:10:51.364Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T14:10:51.364Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c85bda18bd129113cb56a4"
+  },
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c85bda18bd129113cb56a5"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c85bda18bd129113cb56a6"
+      }
+    }
+  ],
+  "total": 649.95,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-05T14:12:42.931Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T14:12:42.931Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c85d3af59d3ff6d16ed378"
+  },
+  "titular": {
+    "$oid": "67c3825d42872f36b71534ee"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c3c353675a7edc846fa7a9"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "67c85d3af59d3ff6d16ed379"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c3c375675a7edc846fa7af"
+      },
+      "cantidad": 3,
+      "_id": {
+        "$oid": "67c85d3af59d3ff6d16ed37a"
+      }
+    }
+  ],
+  "total": 399.96000000000004,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-05T14:18:34.837Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T14:18:34.837Z"
+  }
 }]

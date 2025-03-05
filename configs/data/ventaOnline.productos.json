@@ -10,14 +10,14 @@
   "categoria": {
     "$oid": "67c34f406b5894eba70bc588"
   },
-  "ventas": 23,
+  "ventas": 25,
   "stock": 1,
   "state": true,
   "createdAt": {
     "$date": "2025-03-02T02:32:04.350Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T13:39:02.243Z"
+    "$date": "2025-03-05T12:20:37.956Z"
   }
 },
 {
@@ -32,14 +32,14 @@
   "categoria": {
     "$oid": "67c350356b5894eba70bc590"
   },
-  "ventas": 23,
+  "ventas": 45,
   "stock": 0,
   "state": true,
   "createdAt": {
     "$date": "2025-03-02T02:32:51.798Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T13:39:02.248Z"
+    "$date": "2025-03-05T14:18:34.783Z"
   }
 },
 {
@@ -54,14 +54,14 @@
   "categoria": {
     "$oid": "67c383edf282bd491700d28c"
   },
-  "ventas": 1,
-  "stock": 33,
+  "ventas": 31,
+  "stock": 3,
   "state": true,
   "createdAt": {
     "$date": "2025-03-02T02:33:25.614Z"
   },
   "updatedAt": {
-    "$date": "2025-03-02T02:33:25.614Z"
+    "$date": "2025-03-05T14:18:34.801Z"
   }
 },
 {

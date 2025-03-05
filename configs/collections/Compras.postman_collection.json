@@ -42,6 +42,79 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getFacturas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateFacturas",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODI1ZDQyODcyZjM2YjcxNTM0ZWUiLCJpYXQiOjE3NDExNTI1NjEsImV4cCI6MTc0MTE2MzM2MX0.GyeOBqbmp7wwEqhOQAATKfysWOEO0x_jgS9cdNEnAk4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productos\": [\"Audifonos, Monitor\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/compras/67c6f03fdbfc8af3a710be48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"compras",
+						"67c6f03fdbfc8af3a710be48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFacturasADMIN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODI1ZDQyODcyZjM2YjcxNTM0ZWUiLCJpYXQiOjE3NDExNTA2NzMsImV4cCI6MTc0MTE2MTQ3M30.EHmLSFUJHdS8nc2WNg59suZiKkX_bjyfLqJM6bgPRKc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/compras/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"compras",
+						"admin"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

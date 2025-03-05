@@ -5,7 +5,6 @@ import { generarJWT } from '../helpers/generate-JWT.js';
 
 export const login = async(req, res) => {
     const { email, password, username } = req.body;
-    const total = await Compras.countDocuments();
 
     try {
         
@@ -45,7 +44,6 @@ export const login = async(req, res) => {
             userDetails: {
                 username: user.username,
                 token: token,
-                total,
                 compras: compra
             }
         })
