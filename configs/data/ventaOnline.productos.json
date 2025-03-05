@@ -8,7 +8,7 @@
     "$numberDecimal": "1349.99"
   },
   "categoria": {
-    "$oid": "67c34f406b5894eba70bc588"
+    "$oid": "67c8a5a26cf15edb43ebbf9f"
   },
   "ventas": 25,
   "stock": 1,
@@ -30,7 +30,7 @@
     "$numberDecimal": "249.99"
   },
   "categoria": {
-    "$oid": "67c350356b5894eba70bc590"
+    "$oid": "67c8a5a26cf15edb43ebbf9f"
   },
   "ventas": 45,
   "stock": 0,
@@ -39,7 +39,7 @@
     "$date": "2025-03-02T02:32:51.798Z"
   },
   "updatedAt": {
-    "$date": "2025-03-05T14:18:34.783Z"
+    "$date": "2025-03-05T20:40:23.253Z"
   }
 },
 {
@@ -74,7 +74,7 @@
     "$numberDecimal": "1099.99"
   },
   "categoria": {
-    "$oid": "67c34f406b5894eba70bc588"
+    "$oid": "67c8b88922e3a0d631d31c10"
   },
   "ventas": 2,
   "stock": 12,
@@ -83,6 +83,6 @@
     "$date": "2025-03-02T05:31:00.668Z"
   },
   "updatedAt": {
-    "$date": "2025-03-04T12:21:29.582Z"
+    "$date": "2025-03-05T21:52:20.854Z"
   }
 }]

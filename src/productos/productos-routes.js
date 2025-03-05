@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { saveProducto, getProductos, saerchProducto, deleteProducto } from './productos-controller.js';
+import { saveProducto, getProductos, saerchProducto, deleteProducto, updateProducto } from './productos-controller.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from '../middlewares/validar-jwt.js';
 import { onlyAdminCategoria } from '../middlewares/validar-categorias.js';
@@ -36,6 +36,16 @@ router.delete(
         validarCampos
     ],
     deleteProducto
+)
+
+router.put(
+    '/:id',
+    [
+        validarJWT,
+        onlyAdminCategoria,
+        validarCampos
+    ],
+    updateProducto
 )
 
 export default router;

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d19739b8-c02e-48cc-b4c5-4ccda2f3d67a",
+		"_postman_id": "9e6c84a4-255d-4be6-ac61-6b320de0ef1e",
 		"name": "Productos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37413593"
+		"_exporter_id": "41660832"
 	},
 	"item": [
 		{
@@ -169,6 +169,70 @@
 						"v1",
 						"productos",
 						"67c3c375675a7edc846fa7af"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductosCategorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/productos?ordenar=categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"productos"
+					],
+					"query": [
+						{
+							"key": "ordenar",
+							"value": "categoria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProducto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDEyMDc3MzQsImV4cCI6MTc0MTIxODUzNH0.hbEYkPfGvucDaJoj_8OdqdyasX4M6AuS3VN37cIGC1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoria\": \"Tecnologia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/productos/67c3ed1451031af26af4d300",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"productos",
+						"67c3ed1451031af26af4d300"
 					]
 				}
 			},

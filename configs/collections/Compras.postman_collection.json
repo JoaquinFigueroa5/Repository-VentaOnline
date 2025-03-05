@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "206e372a-a411-4403-9a96-3ff6c392d082",
+		"_postman_id": "2d84f132-1dc9-4613-b4ff-563ca0e73385",
 		"name": "Compras",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37413593"
+		"_exporter_id": "41660832"
 	},
 	"item": [
 		{
@@ -47,7 +47,26 @@
 			"name": "getFacturas",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDEyMDQzMzMsImV4cCI6MTc0MTIxNTEzM30.ZNk55VmRPMswKZiX-g9D6fxIks_PKdRrRXtWYU7B9gg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3010/ventaOnline/v1/compras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"ventaOnline",
+						"v1",
+						"compras"
+					]
+				}
 			},
 			"response": []
 		},
@@ -95,7 +114,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODI1ZDQyODcyZjM2YjcxNTM0ZWUiLCJpYXQiOjE3NDExNTA2NzMsImV4cCI6MTc0MTE2MTQ3M30.EHmLSFUJHdS8nc2WNg59suZiKkX_bjyfLqJM6bgPRKc",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDEyMDQzMzMsImV4cCI6MTc0MTIxNTEzM30.ZNk55VmRPMswKZiX-g9D6fxIks_PKdRrRXtWYU7B9gg",
 						"type": "text"
 					}
 				],

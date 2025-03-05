@@ -26,9 +26,16 @@ export const RestrictedUser = async(req, res, next) => {
     const { id } = req.params;
     const user = req.user.role;
     const authenticatedUser = req.user.id;
+    const { role } = req.body;
 
     try {
-        console.log(user)
+        if (role && user !== "ADMIN_ROLE") {
+            return res.status(403).json({
+                success: false,
+                msg: "Solo los administradores pueden editar el role de otros usuarios"
+            });
+        }
+
         if(user !== "ADMIN_ROLE" && authenticatedUser !== id){
             return res.status(403).json({
                 success: false,

@@ -1,18 +1,9 @@
 [{
   "_id": {
-    "$oid": "67c34f406b5894eba70bc588"
+    "$oid": "67c8a5a26cf15edb43ebbf9f"
   },
   "nombre": "Hogar",
   "descripcion": "Todo lo que tiene que ver con la casa/hogar",
-  "state": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "67c350356b5894eba70bc590"
-  },
-  "nombre": "Tecnologia",
-  "descripcion": "Todos los productos referentes a la tecnologia",
   "state": true,
   "__v": 0
 },
@@ -22,6 +13,24 @@
   },
   "nombre": "Moda",
   "descripcion": "Todo lo que tiene que ver con prendas de vestir.",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c8b87722e3a0d631d31c0d"
+  },
+  "nombre": "Cuarto",
+  "descripcion": "Todo lo que se suele usar en el cuarto",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c8b88922e3a0d631d31c10"
+  },
+  "nombre": "Tecnologia",
+  "descripcion": "Todo lo que tiene que ver con la tecnologia",
   "state": true,
   "__v": 0
 }]

@@ -45,6 +45,7 @@ export const getProductos = async(req, res) => {
                 .sort(
                     ordenar === "agotados" ? { stock: 1 } :
                     ordenar === "MasVendidos" ? { ventas: -1} :
+                    ordenar == "Categorias" ? { categoria: 1} :
                     undefined)
         ])
 
@@ -108,6 +109,40 @@ export const deleteProducto = async(req, res) => {
         return res.status(500).json({
             success: false,
             msg: "Error al querer eliminar el producto",
+            error: error.message || error
+        })
+    }
+}
+
+export const updateProducto = async(req, res) => {
+    try {
+        const { id } = req.params;
+        const { _id, categoria, ...data} = req.body;
+
+        if (categoria) {
+            const categoriaExistente = await Categoria.findOne({ nombre: categoria });
+            console.log(categoria)
+            if (!categoriaExistente) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "La categoría proporcionada no existe"
+                });
+            }
+            data.categoria = categoriaExistente._id;
+        }
+        
+        const updateProducto = await Producto.findByIdAndUpdate(id, data, {new: true})
+            .populate("categoria", "nombre -_id");
+
+        res.status(200).json({
+            success: true,
+            msg: "Producto actualizado con exito",
+            producto: updateProducto
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al actualizar el producto",
             error: error.message || error
         })
     }

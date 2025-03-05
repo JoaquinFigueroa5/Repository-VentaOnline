@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f1159e54-0db8-462a-916f-a2933ca6c9cb",
+		"_postman_id": "566feb3c-1445-4639-b630-5e1da73349c1",
 		"name": "Categoria",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37413593"
+		"_exporter_id": "41660832"
 	},
 	"item": [
 		{
@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDA4OTM0MDYsImV4cCI6MTc0MDkwNDIwNn0.gSYAd3Q90CrFJ-Kzrs8eGJ1dNJBC5Zz0WXV3LOkl3WE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDEyMDcyMTQsImV4cCI6MTc0MTIxODAxNH0.1mDXlJKwLOigUu6Z4Du7Rt-m1zuvAsuTlmNifI_k6Bc",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Cuarto\",\r\n    \"descripcion\": \"Todo lo que se suele usar en el cuarto\"\r\n}",
+					"raw": "{\r\n    \"nombre\": \"Tecnologia\",\r\n    \"descripcion\": \"Todo lo que tiene que ver con la tecnologia\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -83,12 +83,12 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDA4OTM0MDYsImV4cCI6MTc0MDkwNDIwNn0.gSYAd3Q90CrFJ-Kzrs8eGJ1dNJBC5Zz0WXV3LOkl3WE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODIzYzQyODcyZjM2YjcxNTM0ZWIiLCJpYXQiOjE3NDEyMDcyMTQsImV4cCI6MTc0MTIxODAxNH0.1mDXlJKwLOigUu6Z4Du7Rt-m1zuvAsuTlmNifI_k6Bc",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3010/ventaOnline/v1/categorias/67c3ece951031af26af4d2fa",
+					"raw": "http://localhost:3010/ventaOnline/v1/categorias/67c350356b5894eba70bc590",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -98,7 +98,7 @@
 						"ventaOnline",
 						"v1",
 						"categorias",
-						"67c3ece951031af26af4d2fa"
+						"67c350356b5894eba70bc590"
 					]
 				}
 			},

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "81872335-960f-4784-a3cd-e77bd2a55aa3",
+		"_postman_id": "5d86ed0b-e482-4697-82ed-2d12c0e20980",
 		"name": "Auth",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37413593"
+		"_exporter_id": "41660832"
 	},
 	"item": [
 		{
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"gokusaul\",\r\n    \"password\": \"Saul2007\"\r\n}",
+					"raw": "{\r\n    \"username\": \"waexoi\",\r\n    \"password\": \"Alejandra2007\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
