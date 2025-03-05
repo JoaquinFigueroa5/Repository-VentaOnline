@@ -2,55 +2,65 @@ import Compras from "./compras-model.js";
 import Producto from "../productos/pruductos-model.js";
 import User from "../users/user.model.js";
 
-export const saveCompras = async(req, res) => {
+export const saveCompras = async (req, res) => {
     try {
         const titular = req.user._id;
         const { productos } = req.body;
-        const producto = await Producto.find({ name: { $in: productos }});
-        const total = producto.reduce((sum, prod) => sum + prod.precio, 0);
+        const nombresProductos = productos.map(p => p.name);
+        const productosDB = await Producto.find({ name: { $in: nombresProductos } });
 
-        if(producto.length !== productos.length){
+        if (productosDB.length !== productos.length) {
             return res.status(404).json({
                 success: false,
-                msg: "Uno o mas productos no se encuentran disponibles."
-            })
+                msg: "Uno o más productos no se encuentran disponibles."
+            });
         }
 
-        for (const prod of producto) {
-            await Producto.findByIdAndUpdate(prod._id, { $inc: { ventas: 1 } });
-        }
+        let total = 0;
+        const productosCompra = productos.map(p => {
+            const productoEncontrado = productosDB.find(prod => prod.name === p.name);
+            if (productoEncontrado) {
+                total += productoEncontrado.precio * p.cantidad;
+                return {
+                    producto: productoEncontrado._id,
+                    cantidad: p.cantidad
+                };
+            }
+        });
 
-        for (const stock of producto) {
-            await Producto.findByIdAndUpdate(stock._id, { $inc: { stock: -1}})
+        for (const p of productosCompra) {
+            await Producto.findByIdAndUpdate(p.producto, { 
+                $inc: { ventas: p.cantidad, stock: -p.cantidad } 
+            });
         }
-        
 
         const compra = new Compras({
             titular: titular,
-            productos: producto.map(prod => prod._id),
+            productos: productosCompra,
             total
-        })
+        });
 
         await compra.save();
 
-        const compraDetalles = await Compras.findOne({ titular: titular})
-        .populate('titular', 'user username -_id')
-        .populate('productos', 'producto name precio -_id');
+        const compraDetalles = await Compras.findOne({ _id: compra._id })
+            .populate('titular', 'user username -_id')
+            .populate('productos.producto', 'name precio -_id');
 
         res.status(200).json({
             success: true,
-            msg: "Compra realizada con exito!",
+            msg: "Compra realizada con éxito!",
             compra: compraDetalles
-        })
+        });
 
     } catch (error) {
         return res.status(500).json({
             success: false,
             msg: "Error al agregar carrito de compras",
             error: error.message || error
-        })
+        });
     }
-}
+};
+
 
 export const getComprasUser = async(req, res) => {
     try {
@@ -80,7 +90,7 @@ export const getComprasAdmin = async(req, res) => {
         const [total, compras] = await Promise.all([
             Compras.countDocuments(query),
             Compras.find(query)
-                .populate('productos', 'name precio -_id')
+                .populate('productos.producto', 'name precio -_id')
                 .populate('titular', 'user username -_id')
         ]);
 
@@ -104,46 +114,9 @@ export const updateCompras = async(req, res) => {
         const { id } = req.params;
         const { _id, productos, ...data } = req.body;
 
-        const compraExistente = await Compras.findById(id);
-        if (!compraExistente) {
-            return res.status(404).json({
-                success: false,
-                msg: "Compra no encontrada"
-            });
-        }
-
-        // 2️⃣ Verificar si hay productos nuevos para actualizar
-        let productosIds = [];
-        let nuevoTotal = 0;
-        if (productos && Array.isArray(productos) && productos.length > 0) {
-            const productosEncontrados = await Producto.find(
-                { name: { $in: productos } }, 
-                "_id precio"
-            );
-
-            console.log("Productos encontrados en la BD:", productosEncontrados);
-
-            if (productosEncontrados.length === 0) {
-                return res.status(400).json({
-                    success: false,
-                    msg: "Los productos enviados no existen en la base de datos"
-                });
-            }
-
-            productosIds = productosIds.map(prod => prod._id);
-            nuevoTotal = productosEncontrados.reduce((sum, prod) => sum + prod.precio, 0);
-        }
-
-        const updateCompra = await Compras.findByIdAndUpdate(
-            id,
-            { 
-                ...data, ...(productosIds.length > 0 && { productos: productosIds }),
-                total: nuevoTotal
-            },
-            { new: true }
-        )
-        .populate('productos', 'name precio -_id')
-        .populate('titular', 'user username -_id');
+        const updateCompra = await Compras.findByIdAndUpdate(id)
+            .populate('productos', 'name precio -_id')
+            .populate('titular', 'user username -_id')
 
         res.status(200).json({
             success: true,

@@ -24,29 +24,29 @@ export const deleteDeleProducto = async(req, res, next) => {
     }
 }
 
-export const limitStock = async(req, res, next) => {
+export const limitStock = async (req, res, next) => {
     try {
-        const comprasUsuario = await Compras.find({ titular: req.user._id }).populate('productos');
-        const productosVarios = comprasUsuario.flatMap(compra => compra.productos);
+        const { productos } = req.body;
+        const productosBD = await Producto.find({ name: { $in: productos.map(p => p.name) } });
+        const productosSinStock = productos.filter(p => {
+            const productoBD = productosBD.find(prod => prod.name === p.name);
+            return !productoBD || productoBD.stock < p.cantidad;
+        });
 
-        const stock = productosVarios.some(prod => prod.stock <= 0);
-        const productos = await Producto.find({ stock: 0 }).select('name');
-        const productoDetalles = await productos.map(prod => prod.name).join(', ');
-        
-        if(stock){
+        if (productosSinStock.length > 0) {
+            const nombresProductos = productosSinStock.map(p => p.name).join(', ');
             return res.status(403).json({
                 success: false,
-                msg: `No se encuentra ${productoDetalles} en stock`
-            })
+                msg: `No hay suficiente stock para: ${nombresProductos}`
+            });
         }
-        
-        next();
 
+        next();
     } catch (error) {
         return res.status(500).json({
             success: false,
-            msg: "Error en la validacion de stock",
+            msg: "Error en la validación de stock",
             error: error.message || error
-        })
+        });
     }
-}
+};

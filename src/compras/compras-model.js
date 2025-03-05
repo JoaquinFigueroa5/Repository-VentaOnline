@@ -1,15 +1,21 @@
-import {Schema, model} from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const ComprasSchema = Schema({
+const ComprasSchema = new Schema({
     titular: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
     productos: [{
-        type: Schema.Types.ObjectId,
-        ref: "Producto",
-        required: true,
+        producto: { 
+            type: Schema.Types.ObjectId, 
+            ref: "Producto", 
+            required: true 
+        },
+        cantidad: { 
+            type: Number, 
+            default: 1 
+        }
     }],
     total: {
         type: Number,
@@ -23,9 +29,9 @@ const ComprasSchema = Schema({
         type: Boolean,
         default: true
     }
-},{
+}, {
     timestamps: true,
-    verisonkey: false
+    versionKey: false
 });
 
-export default model('Compras', ComprasSchema)
+export default model('Compras', ComprasSchema);
