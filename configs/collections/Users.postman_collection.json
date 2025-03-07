@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "9edb94da-3e12-4430-93d5-ef154affc7c5",
+		"_postman_id": "bd1e960f-28ad-4a4c-acd7-96685241caaf",
 		"name": "Users",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41660832"
+		"_exporter_id": "37413593"
 	},
 	"item": [
 		{
@@ -34,12 +34,21 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzYmU4ZmE0OWJjMTc2ZDk2OGQzM2IiLCJpYXQiOjE3NDA4ODE3NjUsImV4cCI6MTc0MDg5MjU2NX0.M-67NWj5YDb67p3Ec3ucKjY0z07F5ZpbrSAzxzH4hqk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MzODI1ZDQyODcyZjM2YjcxNTM0ZWUiLCJpYXQiOjE3NDEzMTY4NzMsImV4cCI6MTc0MTMyNzY3M30.iIvhubMj6zaqzCc_9xT9JAyeYaCtMBrTkSvn2p5gb_A",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"validacion\": \"SI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3010/ventaOnline/v1/users/67c3be8fa49bc176d968d33b",
+					"raw": "http://localhost:3010/ventaOnline/v1/users/67c3825d42872f36b71534ee",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -49,7 +58,7 @@
 						"ventaOnline",
 						"v1",
 						"users",
-						"67c3be8fa49bc176d968d33b"
+						"67c3825d42872f36b71534ee"
 					]
 				}
 			},
