@@ -54,3 +54,24 @@ export const RestrictedUser = async(req, res, next) => {
         })
     }
 }
+
+export const confirmDeleteUser = async(req, res, next) => {
+    try {
+        const { validacion } = req.body;
+
+        if(validacion === "SI"){
+            next();
+        }else{
+            return res.status(403).json({
+                success: false,
+                msg: "Debe confirmar su elimacion"
+            })
+        }
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al confirmar la eliminacion",
+            error: error.message || error
+        })
+    }
+}

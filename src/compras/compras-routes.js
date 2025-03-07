@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { saveCompras, getComprasUser, getComprasAdmin, updateCompras } from './compras-controller.js';
 import { limitStock } from '../middlewares/validar-productos.js';
-import { onlyAdminFactura } from '../middlewares/validar-facturas.js';
+import { onlyAdminFactura, confirmarCompra } from '../middlewares/validar-facturas.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarJWT } from '../middlewares/validar-jwt.js';
 
@@ -12,6 +12,7 @@ router.post(
     [
         validarJWT,
         limitStock,
+        confirmarCompra,
         validarCampos
     ],
     saveCompras

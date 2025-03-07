@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { getUsers, deleteUser, updateUser } from './user.controller.js'
-import { deleteRestricted, RestrictedUser } from '../middlewares/validar-usuarios.js';
+import { deleteRestricted, RestrictedUser, confirmDeleteUser } from '../middlewares/validar-usuarios.js';
 import { validarJWT } from '../middlewares/validar-jwt.js';
 import { validarCampos } from "../middlewares/validar-campos.js";
 
@@ -14,6 +14,7 @@ router.delete(
     [
         validarJWT,
         deleteRestricted,
+        confirmDeleteUser,
         validarCampos
     ],
     deleteUser
